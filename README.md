@@ -32,11 +32,20 @@ C.Installation
 
 2- Clone the repository:
 
--git clone -cd ticket-management-system -Install the dependencies:
+-git clone -cd ticket-management-system  
+
+or
+
+Initialize the Project:
+
+-mkdir ticket-management-system
+-cd ticket-management-system
+-npm init -y
 
 3-Install Dependencies
 
--npm install
+-npm install express mongoose body-parser dotenv
+
 
 4- Configure Environment Variables
 
