@@ -2,7 +2,7 @@
 
 1.Overview
 
-This project is a simple Ticket Management System built using Node.js and MongoDB. It allows users to create, read, update, and delete support tickets via a RESTful API.
+This project is a basic Ticket Management System that allows users to create, read, update, and delete support tickets. The application uses Node.js for the backend and MongoDB for data storage.
 
 <------------------------------------------------------------------------------------------------------------->
 
@@ -14,6 +14,7 @@ C. Installation
 D. Usage
 E. API Endpoints
 F. Testing
+G- Validation and Error Handling
 
 <------------------------------------------------------------------------------------------------------------->
 
@@ -39,21 +40,31 @@ B.Technologies Used
 
 C.Installation
 
-1- Clone the repository:
+1- Prerequisites
+-Node.js (v14 or higher)
+-MongoDB (local installation or MongoDB Atlas)
+-A code editor (like Visual Studio Code)
+
+2- Clone the repository:
 
 -git clone <repository-url>
 -cd ticket-management-system
 -Install the dependencies:
 
 
-2- npm install
+3-Install Dependencies 
 
-a. Create a .env file in the root directory and add your MongoDB connection string:
+-npm install
+
+
+4- Configure Environment Variables
+
+-Create a .env file in the root directory and add your MongoDB connection string:
 -MONGODB_URI=<your_mongodb_connection_string>
 -PORT=9000
 
 b. Start the server:
--nodemon server
+-nodemon server/npm start
 
 <------------------------------------------------------------------------------------------------------------->
 
@@ -63,7 +74,7 @@ D. Usage
 
 <------------------------------------------------------------------------------------------------------------->
 
-E. API Endpoints
+E. API Documentation Endpoints
 
 1- Create a new ticket:
 
@@ -72,19 +83,23 @@ Endpoints-/api/tickets/create
 Body- json
 
 {
-    "title": "Ticket Title",
-    "description": "Ticket Description"
+  "title": "Ticket Title",
+  "description": "Ticket Description",
+  "status": "open"
 }
+Response- 201 Created: Returns the created ticket.
 
 2-Get all tickets:
 
 Method- GET
 GET /api/tickets
+Response- 201 Created: Returns an array of tickets.
 
 3-Get a single ticket by ID:
 
 Method- GET
 GET /api/tickets/:id
+Response- 201 Created: Returns the ticket with the specified ID.
 
 3- Update a ticket by ID:
 
@@ -93,14 +108,17 @@ Endpoints- /api/tickets/:id
 Body: json
 
 {
-    "title": "Updated Title",
-    "description": "Updated Description"
+  "title": "Updated Title",
+  "description": "Updated Description",
+  "status": "closed"
 }
+Response- 201 Created:  Returns the updated ticket.
 
 4- Delete a ticket by ID:
 
 Method- DELETE 
 Endpoints-/api/tickets/:id
+Response- Successfully deleted the ticket.
 
 <------------------------------------------------------------------------------------------------------------->
 
@@ -111,3 +129,8 @@ F- Testing
 
 <------------------------------------------------------------------------------------------------------------->
 
+G- Validation and Error Handling
+
+-The application implements validation for ticket fields. Error handling is in place to manage invalid inputs and non-existent tickets.
+
+<------------------------------------------------------------------------------------------------------------->
