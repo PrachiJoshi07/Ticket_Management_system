@@ -65,13 +65,16 @@ E. API Documentation Endpoints
 
 1- Create a new ticket:
 
-Method- POST Endpoints-/api/tickets/create Body- json
+Method- POST Endpoints-/api/tickets/create 
+
+Body- json
 
 { "title": "Ticket Title", "description": "Ticket Description", "status": "open" } Response- 201 Created: Returns the created ticket.
 
 2-Get all tickets:
 
-Method- GET GET /api/tickets Response- 201 Created: Returns an array of tickets.
+Method- GET GET /api/tickets 
+Response- 201 Created: Returns an array of tickets.
 
 3-Get a single ticket by ID:
 
